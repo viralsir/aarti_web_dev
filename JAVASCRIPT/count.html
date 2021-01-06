@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>count demo</title>
+    <script>
+        let counter=0;
+        function count()
+        {
+            document.querySelector("#result").innerHTML=counter;
+
+            if(counter %10 == 0){
+                alert(`count  is reach to ${counter}`);
+            }
+             counter =counter+1
+        }
+    </script>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <button onclick="count()">Count</button>
+</body>
+</html>
