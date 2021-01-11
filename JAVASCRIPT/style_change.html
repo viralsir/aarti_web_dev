@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>style_change_demo</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+
+
+            document.querySelector("#color").onchange=function(){
+                document.querySelector("h1").style.color=this.value;
+            }
+
+
+            /*
+            document.querySelectorAll("button").forEach(button=>{
+                button.onclick=function(){
+                    document.querySelector("h1").style.color=button.dataset.color;
+                }
+            })
+            */
+
+
+           /* // add click event on red button to change the font color red
+            document.querySelector("#red").onclick=function(){
+                document.querySelector("h1").style.color='red';
+            }
+
+            // add click event on green button to change the font color green
+            document.querySelector("#green").onclick=function(){
+                document.querySelector("h1").style.color='green';
+            }
+
+            // add click event on blue button to change the font color blue
+            document.querySelector("#blue").onclick=function(){
+                document.querySelector("h1").style.color='blue';
+            }
+*/
+
+
+        })
+    </script>
+</head>
+<body>
+    <h1>Hello</h1>
+    <!--
+    <button data-color="red">red</button>
+    <button data-color="green">green</button>
+    <button data-color="blue">blue</button>
+    -->
+    <select>
+        <option value="red">Red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="black">black</option>
+        <option value="yellow">yellow</option>
+    </select>
+
+    <input type="color" id="color">
+
+
+
+
+</body>
+</html>

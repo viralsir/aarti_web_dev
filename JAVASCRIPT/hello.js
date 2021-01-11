@@ -11,7 +11,8 @@
                 h1tag.innerHTML="hello";
             }
 
-        }
-        document.addEventListener('DOMContentLoaded',function(){
-            document.querySelector("button").onclick=hello;
-        })
+ }
+    document.addEventListener('DOMContentLoaded',function(){
+        document.querySelector("button").onclick=hello;
+    })
+
