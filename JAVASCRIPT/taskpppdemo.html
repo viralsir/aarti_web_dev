@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task </title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+
+            document.querySelector("#submit").disabled=true;
+
+            document.querySelector("#task").onkeyup=function(){
+
+                if(document.querySelector("#task").value.length>0)
+                {
+                    document.querySelector("#submit").disabled=false;
+                }
+                else
+                {
+                    document.querySelector("#submit").disabled=true;
+                }
+
+            }
+
+            document.querySelector("form").onsubmit=function(){
+
+                let li=document.createElement("li")
+                li.innerHTML=document.querySelector("#task").value;
+
+                let ul=document.querySelector("#tasks")
+                ul.append(li)
+                document.querySelector("#task").value='';
+                document.querySelector("#submit").disabled=true;
+                return false;
+            }
+        })
+    </script>
+</head>
+<body>
+    <h1> List of Tasks </h1>
+    <ul id="tasks">
+
+    </ul>
+    <form>
+        <input type="text" id="task" placeholder="New Task" >
+        <input type="submit" id="submit" >
+    </form>
+</body>
+</html>
