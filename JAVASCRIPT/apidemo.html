@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apidemo</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+
+            document.querySelector("form").onsubmit=function ()
+            {
+                //AJAX
+            fetch("https://api.exchangeratesapi.io/latest?base=USD")
+            .then(response=>response.json())
+            .then(data =>{
+                  //console.log(data.rates.INR);
+                let currency=document.querySelector("#currency").value;
+                let rate=data.rates[currency];
+
+                document.querySelector("#result").innerHTML=` 1 USD is equal to ${rate} ${currency}`;
+            })
+
+
+                return false;
+            }
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <form>
+        <input type="text" placeholder="enter currency code" id="currency">
+        <input type="submit">
+    </form>
+</body>
+</html>

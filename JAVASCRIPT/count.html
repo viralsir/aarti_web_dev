@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <title>count demo</title>
     <script>
-        let counter=0;
-        function count()
+        if(!localStorage.getItem('counter1'))
         {
+            localStorage.setItem('counter1',0);
+        }
+        function count(){
+
+            let counter=parseInt(localStorage.getItem('counter1'));
             document.querySelector("#result").innerHTML=counter;
 
             if(counter %10 == 0){
                 alert(`count  is reach to ${counter}`);
             }
-             counter =counter+1
+            counter =counter+1
+            localStorage.setItem('counter1',counter);
 
         }
+        document.addEventListener('DOMContentLoaded',function(){
+
+            document.querySelector('#result').innerHTML=localStorage.getItem('counter1');
+            setInterval(count,1000);
+        })
     </script>
 </head>
 <body>
     <h1 id="result"></h1>
-    <button onclick="count()">Count</button>
+
 </body>
 </html>
